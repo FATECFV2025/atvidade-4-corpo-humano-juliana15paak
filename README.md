@@ -1,3 +1,5 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/RPHb6JFs)
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=20969749&assignment_repo_type=AssignmentRepo)
 # Atividade 4 - Classe e Objeto
 
 
@@ -30,12 +32,23 @@
 
 ### Após essa implementação responda:
 
-- Na classe Corpo_Humano inclua a linha c1.massa = "2"; logo depois de instanciar o objeto c1. Qual foi a ocorrência? Qual a conclusão sobre o que aconteceu?
-- Na classe Corpo_Humano altere a linha private float Massa para public float Massa; Qual foi a ocorrência? Qual a conclusão sobre o que aconteceu?
-- Na classe Corpo_Humano altere a linha public setVolume (float volume) para private setVolume (float volume).Qual foi a ocorrência? Qual a conclusão sobre o que aconteceu?
-- Coloque as respostas em um arquivo txt
+1. Responda às questões abaixo:
+- Na classe Corpo_Humano inclua a linha c1.massa = "2"; logo depois de instanciar o objeto c1.
+    - Qual foi a ocorrência?
+    Se incluir essa linha na classe CorpoHumano, aparece “Syntax error on token "massa", VariableDeclaratorId expected after this token”. Se incluir na classe Main, aparece “The method massa(String) is undefined for the type CorpoHumano”
+    - Qual a conclusão sobre o que aconteceu?
+    Se incluir essa linha na classe CorpoHumano, não funcionará pois não foi instanciado nenhum objeto da própria classe. Se incluir na classe Main, não é possível acessar a variável “massa” diretamente, apenas pelo método setMassa(), e não é possível atualizar o valor usando uma String, pois o valor esperado para essa variável é um float.
 
-<b>Colocar essa informação no Readme do Git ou Em comentários de código na classe main </b>
+- Na classe Corpo_Humano altere a linha private float Massa para public float Massa;
+    - Qual foi a ocorrência?
+    Não houve erro na execução do código.
+    - Qual a conclusão sobre o que aconteceu?
+    Agora é possível acessar a variável massa diretamente em outra classe sem precisar usar os métodos get ou set. 
+- Na classe Corpo_Humano altere a linha public setVolume(float volume) para private setVolume(float volume)
+    - Qual foi a ocorrência?
+    “The method setVolume(float) from the type CorpoHumano is never used locally”
+    - Qual a conclusão sobre o que aconteceu?
+    O método set tem o objetivo de permitir a alteração do valor de uma variável em outra classe, mas tornando o acesso privado, apenas a própria classe tem acesso ao método, tornando-o inútil.
 
 
 ## DESAFIO 🚀
