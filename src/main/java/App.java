@@ -1,30 +1,24 @@
-package main.java;
 import java.util.Scanner;
 
 public class App {
-        //Comentário
-
-    public static void funcao_teste (){
-        //Biblioteca para entrada de dados
-        Scanner ler = new Scanner(System.in); 
-
-        //variável local a
-        String v2;
-        int v1;
-
-        System.out.println("Comando de Saida de Dados");
-        
-        System.out.printf("Informe uma palavra: ");
-        v2 = ler.next();
-
-        System.out.printf("Informe um número: ");
-        v1 = ler.nextInt();
-
-        System.out.printf(v2+" "+v1);
-    }
     public static void main(String[] args) throws Exception {
-        funcao_teste();
-
-
+        Scanner in = new Scanner(System.in);
+        CorpoHumano corpo = new CorpoHumano();
+        System.out.println("=== CRIAÇÃO DO OBJETO CORPO HUMANO ===");
+        System.out.print("Digite a massa inicial (kg): ");
+        corpo.setMassa(in.nextFloat());
+        System.out.print("Digite o volume inicial (m³): ");
+        corpo.setVolume(in.nextFloat());
+        System.out.print("Digite a densidade inicial (kg/m³): ");
+        corpo.setDensidade(in.nextFloat());
+        System.out.print("Digite a altura inicial (m): ");
+        corpo.setAltura(in.nextFloat());
+        
+        System.out.println("=== VALORES INICIAIS ===");
+        System.out.println("Massa: "+corpo.getMassa()+"kg");
+        System.out.println("Volume: "+corpo.getVolume()+"m³");
+        System.out.println("Densidade: "+corpo.getDensidade()+"kg/m³");
+        System.out.println("Altura: "+corpo.getAltura()+"m");
+        System.out.println("IMC: "+corpo.calculoImc());
     }
 }
